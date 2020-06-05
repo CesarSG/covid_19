@@ -4,6 +4,8 @@ import {Cards, Chart, CountryPicker} from './components';
 import  styles from './App.module.css';
 import {fetchedtData} from './api';
 
+import covidImage from './images/coronavirus.svg';
+
 class App extends React.Component{
 
     state = {
@@ -30,13 +32,21 @@ class App extends React.Component{
         const {data, country} = this.state;
 
         return(
-            <div className={styles.container}>
-                <Cards data={data}/>
-                <CountryPicker handleCountryChange={this.handleCountryChange}/>
-                <Chart data={data} country={country}/>
+            <div>
+                <div className={styles.header}>
+                    <img className={styles.image} alt="covid-19" src={covidImage}/>
+                    <h1 className={styles.title}>COVID-19</h1>
+                </div>
+                <div className={styles.container}>
+                    
+                    <Cards data={data}/>
+                    <CountryPicker handleCountryChange={this.handleCountryChange}/>
+                    <Chart data={data} country={country}/>
+                    
+                </div>
                 
-
             </div>
+            
         );
     }
 }
