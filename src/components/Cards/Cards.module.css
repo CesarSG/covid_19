@@ -2,18 +2,37 @@
     margin: 50px 0;
 }
 
+h5{
+    font-size: 1.5rem;
+    margin: 0;
+}
+
 .card{
     margin: 0 2% !important;
 }
 
+.cardColor{
+    background-color: #fafafa !important;
+}
+
+.date{
+    color: #9b9b9b;
+}
+
 .infected{
-    border-bottom: 10px solid rgba(0,0,255,0.5);
+    border-top: 10px solid #0779e4;
 }
 
 .recovered{
-    border-bottom: 10px solid rgba(0,255,0,0.5);
+    border-top: 10px solid #50d890;
 }
 
 .deaths{
-    border-bottom: 10px solid rgba(255,0,0,0.5);
+    border-top: 10px solid #dd2c00;
+}
+
+@media (max-width: 770px) {
+    .card{
+        margin: 2% 0 !important;
+    }
 }
