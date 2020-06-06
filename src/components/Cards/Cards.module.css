@@ -1,18 +1,32 @@
 .container{
-    margin: 50px 0;
+    margin: 8rem 0;
 }
 
 h5{
     font-size: 1.5rem;
     margin: 0;
+    padding: 0;
 }
 
 .card{
     margin: 0 2% !important;
+    box-shadow: 0 17px 46px -10px #777 !important;
+    border-radius: 1rem !important;
 }
 
 .cardColor{
     background-color: #fafafa !important;
+}
+
+.cardTitle{
+    margin-bottom: 0 !important;
+    padding: auto 0px auto 0px !important;
+}
+
+.iconCard{
+    width: 20%;
+    float: left;
+    margin-right: 15%;
 }
 
 .date{
@@ -20,15 +34,17 @@ h5{
 }
 
 .infected{
-    border-top: 10px solid #0779e4;
+    color: #0779e4;
 }
 
+
+
 .recovered{
-    border-top: 10px solid #50d890;
+    color: #50d890;
 }
 
 .deaths{
-    border-top: 10px solid #dd2c00;
+    color: #dd2c00;
 }
 
 @media (max-width: 770px) {

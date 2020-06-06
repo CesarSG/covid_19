@@ -1,9 +1,13 @@
 import React from 'react';
-import { Card, CardContent, Typography, Grid, StylesProvider } from '@material-ui/core';
+import { Card, CardContent, Grid } from '@material-ui/core';
 import CountUp from 'react-countup';
 import cx from 'classnames';
 
 import styles from './Cards.module.css';
+
+import alert from '../../images/alert.svg';
+import patient from '../../images/patient.svg';
+import bandage from '../../images/bandage.svg';
 
 const Cards = ({ data: {confirmed, recovered, deaths, lastUpdate}}) => {
 
@@ -13,11 +17,12 @@ const Cards = ({ data: {confirmed, recovered, deaths, lastUpdate}}) => {
 
     return(
         <div className={styles.container}>
-            <Grid container spacing={3} justify="center">
-                <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.infected, styles.cardColor)}>
+            <Grid container spacing={0} justify="center">
+                <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.cardColor)}>
                     <CardContent>
-                        <p>Infected</p>
-                        <h5>
+                        <img className={styles.iconCard} alt="covid-19" src={patient}/>
+                        <p className={styles.cardTitle}>Infected</p>
+                        <h5 className={styles.infected}>
                             <CountUp
                                 start={0}
                                 end={confirmed.value}
@@ -29,10 +34,11 @@ const Cards = ({ data: {confirmed, recovered, deaths, lastUpdate}}) => {
                         <p>Number of recovieries from COVID-19</p>
                     </CardContent>
                 </Grid>
-                <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.deaths, styles.cardColor)}>
+                <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.cardColor)}>
                     <CardContent>
-                        <p>Deaths</p>
-                        <h5>
+                        <img className={styles.iconCard} alt="covid-19" src={alert}/>
+                        <p className={styles.cardTitle}>Deaths</p>
+                        <h5 className={styles.deaths}>
                             <CountUp
                                 start={0}
                                 end={deaths.value}
@@ -44,10 +50,11 @@ const Cards = ({ data: {confirmed, recovered, deaths, lastUpdate}}) => {
                         <p>Number of deaths caused by COVID-19</p>
                     </CardContent>
                 </Grid>
-                <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.recovered, styles.cardColor)}>
+                <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.cardColor)}>
                     <CardContent>
-                        <p>Recovered</p>
-                        <h5>
+                        <img className={styles.iconCard} alt="covid-19" src={bandage}/>
+                        <p className={styles.cardTitle}>Recovered</p>
+                        <h5 className={styles.recovered}>
                             <CountUp
                                 start={0}
                                 end={recovered.value}
