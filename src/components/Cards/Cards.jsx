@@ -17,19 +17,6 @@ const Cards = ({ data: {confirmed, recovered, deaths, lastUpdate, pctDeaths, pct
         return "Loading..." ;
     }
 
-    if(confirmed){
-
-        let getPct = (value,confirmed) => {
-            let pct = (value * 100)/confirmed;
-            pct = pct.toFixed(2);
-            
-            return pct;
-        }
-
-        let pctDeaths = getPct(deaths.value,confirmed.value);
-        let pctRecovered = getPct(recovered.value,confirmed.value);
-    }
-
     return(
         <div className={styles.container}>
             <Grid container spacing={0} justify="center">
