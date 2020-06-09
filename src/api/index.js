@@ -14,7 +14,17 @@ export const fetchedtData = async (country) => {
     try {
         const {data: {confirmed,recovered,deaths,lastUpdate}} = await axios.get(changeableURL);
 
-        return { confirmed, recovered, deaths, lastUpdate};
+        const getPct = (value,confirmed) => {
+            let pct = (value * 100)/confirmed;
+            
+            return pct;
+        }
+
+        const pctDeaths = getPct(deaths.value,confirmed.value);
+        const pctRecovered = getPct(recovered.value,confirmed.value);
+
+
+        return { confirmed, recovered, deaths, lastUpdate, pctDeaths, pctRecovered};
         
     } catch (error) {
         console.log(error);
