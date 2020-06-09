@@ -16,7 +16,7 @@ _To carry out the correct installation of the project we will have to follow the
 
 
 ```sh
-$ git clone 'direccion-repositorio'
+$ git clone 'repository-directory'
 ```
 
 2. Install dependencies
